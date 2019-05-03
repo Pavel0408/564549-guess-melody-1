@@ -12,4 +12,4 @@ export const App = (props) => {
 App.propTypes = {
   gameTime: PropTypes.number.isRequired,
   errorCount: PropTypes.number.isRequired
-}
+};
