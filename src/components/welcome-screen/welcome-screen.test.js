@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import {WelcomeScreen} from './welcome-screen.jsx';
 
-const mock = {
+const settingsMock = {
   gameDuration: 5,
   errorCount: 3,
   gameStart() {
@@ -13,7 +13,7 @@ const mock = {
 
 describe(`testing WelcomeScreen render`, () => {
   it(`WelcomeScreen is render correctly`, () => {
-    const {gameDuration, errorCount, gameStart} = mock;
+    const {gameDuration, errorCount, gameStart} = settingsMock;
     const tree = renderer.create(<WelcomeScreen
       gameDuration={gameDuration}
       errorCount={errorCount}
