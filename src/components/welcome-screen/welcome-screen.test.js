@@ -11,13 +11,15 @@ const mock = {
   }
 };
 
-it(`WelcomeScreen is render correctly`, () => {
-  const {gameDuration, errorCount, gameStart} = mock;
-  const tree = renderer.create(<WelcomeScreen
-    gameDuration={gameDuration}
-    errorCount={errorCount}
-    gameStart={gameStart}
-  />).toJSON();
+describe(`testing WelcomeScreen render`, () => {
+  it(`WelcomeScreen is render correctly`, () => {
+    const {gameDuration, errorCount, gameStart} = mock;
+    const tree = renderer.create(<WelcomeScreen
+      gameDuration={gameDuration}
+      errorCount={errorCount}
+      gameStart={gameStart}
+    />).toJSON();
 
-  expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
+  });
 });
