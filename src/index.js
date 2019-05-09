@@ -7,7 +7,7 @@ const init = () => {
   const settings = {
     gameDuration: 5,
     errorCount: 3,
-    gameStart() {
+    startButtonClickHandler() {
       return null;
     }
   };
@@ -16,7 +16,7 @@ const init = () => {
       <App
         errorCount={settings.errorCount}
         gameDuration={settings.gameDuration}
-        gameStart={settings.gameStart}
+        startButtonClickHandler={settings.startButtonClickHandler}
       />,
       document.querySelector(`.main`)
   );

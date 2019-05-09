@@ -8,16 +8,16 @@ configure({adapter: new Adapter()});
 
 describe(`testing the App work`, () => {
   it(`click the start button calls the handler`, () => {
-    const clickHandler = jest.fn();
+    const startButtonClickHandler = jest.fn();
     const app = mount(<App
       gameDuration={0}
       errorCount={0}
-      gameStart={clickHandler}
+      startButtonClickHandler={startButtonClickHandler}
     />);
 
     const startButton = app.find(`button`);
     startButton.simulate(`click`);
-    expect(clickHandler).toHaveBeenCalledTimes(1);
+    expect(startButtonClickHandler).toHaveBeenCalledTimes(1);
   });
 });
 
