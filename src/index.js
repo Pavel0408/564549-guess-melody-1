@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import {App} from "./components/app/app";
+import {questions} from "./mock/questions";
 
 const init = () => {
   const settings = {
@@ -17,6 +18,7 @@ const init = () => {
         errorCount={settings.errorCount}
         gameDuration={settings.gameDuration}
         startButtonClickHandler={settings.startButtonClickHandler}
+        questions={questions}
       />,
       document.querySelector(`.main`)
   );
