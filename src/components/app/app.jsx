@@ -17,8 +17,9 @@ export class App extends PureComponent {
     this.onStartButtonClick = this.onStartButtonClick.bind(this);
   }
 
-  onStartButtonClick() {
-    console.log(1);
+  onStartButtonClick(evt) {
+    evt.preventDefault();
+    console.log(1, evt);
     const {questions} = this.props;
     let questionNumber = this.state.questionNumber;
     questionNumber++;
@@ -40,10 +41,14 @@ export class App extends PureComponent {
       const type = QuestionType[questions[questionNumber].type];
       switch (type) {
         case `genre`: {
-          return <GameGenre/>;
+          return <GameGenre
+            onStartButtonClick={this.onStartButtonClick}
+          />;
         }
         case `artist`: {
-          return <GameArtist/>;
+          return <GameArtist
+            onStartButtonClick={this.onStartButtonClick}
+          />;
         }
       }
     }

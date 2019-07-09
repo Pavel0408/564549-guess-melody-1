@@ -1,6 +1,8 @@
 import React from "react";
 
-export const GameArtist = () => {
+export const GameArtist = (props) => {
+  const {onStartButtonClick} = props;
+
   return <React.Fragment>
     <section className="game game--artist">
       <header className="game__header">
@@ -30,21 +32,21 @@ export const GameArtist = () => {
         </div>
         <form className="game__artist">
           <div className="artist">
-            <input className="artist__input visually-hidden" type="radio" name="answer" defaultValue="artist-1" id="answer-1" />
+            <input className="artist__input visually-hidden" type="radio" name="answer" defaultValue="artist-1" id="answer-1" onChange={onStartButtonClick}/>
             <label className="artist__name" htmlFor="answer-1">
               <img className="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
               Пелагея
             </label>
           </div>
           <div className="artist">
-            <input className="artist__input visually-hidden" type="radio" name="answer" defaultValue="artist-2" id="answer-2" />
+            <input className="artist__input visually-hidden" type="radio" name="answer" defaultValue="artist-2" id="answer-2" onChange={onStartButtonClick}/>
             <label className="artist__name" htmlFor="answer-2">
               <img className="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
               Краснознаменная дивизия имени моей бабушки
             </label>
           </div>
           <div className="artist">
-            <input className="artist__input visually-hidden" type="radio" name="answer" defaultValue="artist-3" id="answer-3" />
+            <input className="artist__input visually-hidden" type="radio" name="answer" defaultValue="artist-3" id="answer-3" onChange={onStartButtonClick}/>
             <label className="artist__name" htmlFor="answer-3">
               <img className="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
               Lorde

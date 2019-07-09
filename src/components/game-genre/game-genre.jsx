@@ -26,7 +26,7 @@ export const GameGenre = (props) => {
       </header>
       <section className="game__screen">
         <h2 className="game__title">Выберите инди-рок треки</h2>
-        <form className="game__tracks">
+        <form className="game__tracks" onSubmit={onStartButtonClick}>
           <div className="track">
             <button className="track__button track__button--play" type="button" />
             <div className="track__status">
@@ -67,7 +67,7 @@ export const GameGenre = (props) => {
               <label className="game__check" htmlFor="answer-4">Отметить</label>
             </div>
           </div>
-          <button className="game__submit button" type="submit" onClick={onStartButtonClick}>Ответить</button>
+          <button className="game__submit button" type="submit">Ответить</button>
         </form>
       </section>
     </section>
