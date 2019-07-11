@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const GameGenre = (props) => {
-  const {onStartButtonClick} = props;
+  const {onChangeQuestion} = props;
 
   return <React.Fragment>
     <section className="game game--genre">
@@ -26,7 +27,7 @@ export const GameGenre = (props) => {
       </header>
       <section className="game__screen">
         <h2 className="game__title">Выберите инди-рок треки</h2>
-        <form className="game__tracks" onSubmit={onStartButtonClick}>
+        <form className="game__tracks" onSubmit={onChangeQuestion}>
           <div className="track">
             <button className="track__button track__button--play" type="button" />
             <div className="track__status">
@@ -72,4 +73,8 @@ export const GameGenre = (props) => {
       </section>
     </section>
   </React.Fragment>;
+};
+
+GameGenre.propTypes = {
+  onChangeQuestion: PropTypes.func
 };

@@ -14,16 +14,14 @@ export class App extends PureComponent {
       questionNumber: -1
     };
 
-    this.onStartButtonClick = this.onStartButtonClick.bind(this);
+    this.onChangeQuestion = this.onChangeQuestion.bind(this);
   }
 
-  onStartButtonClick(evt) {
+  onChangeQuestion(evt) {
     evt.preventDefault();
-    console.log(1, evt);
     const {questions} = this.props;
     let questionNumber = this.state.questionNumber;
     questionNumber++;
-    console.log(questionNumber);
     if (questionNumber >= questions.length) {
       questionNumber = -1;
     }
@@ -36,18 +34,16 @@ export class App extends PureComponent {
 
   screenSwitch({questions, questionNumber, gameDuration, errorCount}) {
     if (questions && questions[questionNumber]) {
-      console.log(questions[questionNumber].type);
-      console.log(QuestionType[questions[questionNumber].type]);
       const type = QuestionType[questions[questionNumber].type];
       switch (type) {
         case `genre`: {
           return <GameGenre
-            onStartButtonClick={this.onStartButtonClick}
+            onChangeQuestion={this.onChangeQuestion}
           />;
         }
         case `artist`: {
           return <GameArtist
-            onStartButtonClick={this.onStartButtonClick}
+            onChangeQuestion={this.onChangeQuestion}
           />;
         }
       }
@@ -56,7 +52,7 @@ export class App extends PureComponent {
     return <WelcomeScreen
       gameDuration={gameDuration}
       errorCount={errorCount}
-      onStartButtonClick={this.onStartButtonClick}
+      onChangeQuestion={this.onChangeQuestion}
     />;
   }
 
@@ -70,6 +66,5 @@ export class App extends PureComponent {
 App.propTypes = {
   gameDuration: PropTypes.number.isRequired,
   errorCount: PropTypes.number.isRequired,
-  startButtonClickHandler: PropTypes.func.isRequired,
   questions: PropTypes.array
 };
