@@ -5,19 +5,18 @@ import {WelcomeScreen} from './welcome-screen.jsx';
 
 const settingsMock = {
   gameDuration: 5,
-  errorCount: 3,
-  startButtonClickHandler() {
-    return null;
-  }
+  errorCount: 3
 };
+
+const onChangeQuestion = () => {};
 
 describe(`testing WelcomeScreen render`, () => {
   it(`WelcomeScreen is render correctly`, () => {
-    const {gameDuration, errorCount, startButtonClickHandler} = settingsMock;
+    const {gameDuration, errorCount} = settingsMock;
     const tree = renderer.create(<WelcomeScreen
       gameDuration={gameDuration}
       errorCount={errorCount}
-      startButtonClickHandler={startButtonClickHandler}
+      onChangeQuestion={onChangeQuestion}
     />).toJSON();
 
     expect(tree).toMatchSnapshot();
