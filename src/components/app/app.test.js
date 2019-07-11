@@ -5,19 +5,15 @@ import {App} from './app.jsx';
 
 const settingsMock = {
   gameDuration: 5,
-  errorCount: 3,
-  startButtonClickHandler() {
-    return null;
-  }
+  errorCount: 3
 };
 
 describe(`testing App render`, () => {
   it(`App is render correctly`, () => {
-    const {gameDuration, errorCount, startButtonClickHandler} = settingsMock;
+    const {gameDuration, errorCount} = settingsMock;
     const tree = renderer.create(<App
       gameDuration={gameDuration}
       errorCount={errorCount}
-      startButtonClickHandler={startButtonClickHandler}
     />).toJSON();
 
     expect(tree).toMatchSnapshot();
