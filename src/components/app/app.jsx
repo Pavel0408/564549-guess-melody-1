@@ -34,16 +34,19 @@ export class App extends PureComponent {
 
   screenSwitch({questions, questionNumber, gameDuration, errorCount}) {
     if (questions && questions[questionNumber]) {
+      console.log(questions[questionNumber]);
       const type = QuestionType[questions[questionNumber].type];
       switch (type) {
         case `genre`: {
           return <GameGenre
             onChangeQuestion={this.onChangeQuestion}
+            question={questions[questionNumber]}
           />;
         }
         case `artist`: {
           return <GameArtist
             onChangeQuestion={this.onChangeQuestion}
+            question={questions[questionNumber]}
           />;
         }
       }
